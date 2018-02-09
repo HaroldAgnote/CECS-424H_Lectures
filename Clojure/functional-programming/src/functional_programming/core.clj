@@ -17,7 +17,9 @@
   (println (filter pos? mylist))
 
   ; challenge: filter to multiples of 3
+  (println (filter #(= 0 (rem % 3)) mylist))
 
+  ; challenge: filter to powers of 2
 
 
   ; (map f coll)
@@ -27,9 +29,25 @@
 
   ; challenge: map the even elements of mylist to half their value
 
+  (println (map #(/ % 2) (filter even? mylist)))
+
+  ; square each value of myList; then produce only the values that fall between 10 and 40
+
+  (println (map #(* % %) mylist))
+  (println (filter #(< 10 % 40) (map #(* % %) mylist)))
 
 
   ; challenge: implement map as a clojure function
+
+  (defn mymap [mapfn coll]
+    (cond (empty? coll)
+          nil
+
+          :else
+          (cons (mapfn (first coll))
+                (mymap mapfn (next (coll))))
+
+          )
 
 
 
@@ -60,3 +78,14 @@
 
   )
 
+  (defn square-coll [coll]
+    (cond (empty? coll)
+          nil
+          
+          :else
+          (cons (* (first coll) (first coll))
+                (square-coll (next coll))
+          ) 
+    )
+  )
+)
