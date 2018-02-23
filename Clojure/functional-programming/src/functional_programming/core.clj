@@ -21,7 +21,6 @@
 
   ; challenge: filter to powers of 2
 
-
   ; (map f coll)
   ; return a new list by applying f to each element of coll.
   (println (map even? mylist))
