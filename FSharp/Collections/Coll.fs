@@ -6,7 +6,7 @@
 let mySeq = seq {yield 1; yield 2; yield 3}
 
 // This sequence contains 3 values, and can be iterated over using a for loop.
-let printSequence (s : int seq) =
+let printSequence s =
     for i in s do
         printfn "%d" i
 // Fun fact: the type annotation isn't necessary...
@@ -42,7 +42,6 @@ printSequence list1.Tail
 
 
 // Jump over to "Generics.fs" first
-
 
 
 
@@ -101,6 +100,7 @@ let startsWith h coll =
 printfn "startsWith list1 5: %O" (startsWith 1 list1)
 
 // You know what's coming next.... recursive functions on lists!
+<<<<<<< HEAD
 
 let rec contains v coll =
     if List.isEmpty coll then
@@ -125,3 +125,22 @@ let rec skip n coll =
         |> List.tail
         |> take (n - 1)
         |> (::) List.head coll
+ 
+let rec take n coll =
+    if n = 0 then
+        []
+    else
+        List.head coll :: take (n - 1) (List.tail coll)
+
+
+
+
+
+
+
+
+
+
+
+
+
