@@ -44,6 +44,16 @@ printSequence list1.Tail
 // Jump over to "Generics.fs" first
 
 
+
+
+
+let identity x = x
+
+identity 10
+identity "Hello"
+identity [1; 2; 3;]
+
+
 // Lists are a "generic type", in that many operations on lists are agnostic regarding
 // the type of data contained in the list. We can write methods that operate on lists of any 
 // type using generics.
@@ -91,3 +101,27 @@ let startsWith h coll =
 printfn "startsWith list1 5: %O" (startsWith 1 list1)
 
 // You know what's coming next.... recursive functions on lists!
+
+let rec contains v coll =
+    if List.isEmpty coll then
+        false
+    elif List.head coll = v then
+        true
+    else
+        // contains v (List.tail coll)
+        coll
+        |> List.tail
+        |> contains v
+
+
+let rec skip n coll =
+    if n = 0 then
+        []
+    elif List.isEmpty then
+        coll
+    else
+        // (List.head coll) :: (take (n - 1) (List.tail coll))
+        coll
+        |> List.tail
+        |> take (n - 1)
+        |> (::) List.head coll

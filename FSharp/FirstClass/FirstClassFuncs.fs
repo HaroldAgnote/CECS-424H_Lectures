@@ -23,6 +23,8 @@ list1 |> List.filter isEven |> printfn "%A"
 
 // What is the TYPE of List.filter? Hint: combine what we know about generics and function types.
 
+// (int->bool)->int list-> int list
+// ('a->bool)->'a list->'a list
 
 
 
@@ -32,7 +34,7 @@ list1
 |> List.map square
 |> printfn "The even values, each squared: %A"
 
-
+// 
 
 
 // Finally, how can functions be "dynamically created"? Two ways:
@@ -44,7 +46,7 @@ list1
 |> List.map square
 |> printfn "The odd values, each squared: %A"
 
-
+// ('a->'b)->'a list->'b list
 
 
 // An example with strings
