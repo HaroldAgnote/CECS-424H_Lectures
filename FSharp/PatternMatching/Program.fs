@@ -32,13 +32,13 @@ let getPrice food =
 let rec factorial n = 
     match n with
     | 0 -> 1
-    | x -> x  * factorial (n - 1)
+    | x -> x  * factorial (x - 1)
 
 let rec fibonacci n =
     match n with 
     | 0 -> 0
     | 1 -> 1
-    | x -> fibonacci (n - 1) + fibonacci (n - 2)
+    | x -> fibonacci (x - 1) + fibonacci (x - 2)
 
 
 // We can also match on lists

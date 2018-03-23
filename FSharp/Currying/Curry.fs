@@ -15,12 +15,12 @@ let wtf = remainder 10
 
 // What type is wtf?
 
-
+// Function int->int
 
 
 
 // Since wtf is a function, we can invoke it
-wtf 7 |> printfn "10 remainder 7 is %d"
+wtf 7 |> printfn "10 remainder 7 is %d" 
 
 
 // So what's going on when I use this function "normally"?

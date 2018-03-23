@@ -7,6 +7,7 @@ let dinner = ("green eggs", "ham") // commas separate tuples, semicolons separat
 // Tuples can contain any data type, including other tuples.
 let nested = (1, (2.0, [3; 4; 5]), (4L, "5", '6'))
 // What type is nested?
+// int * (float * int list) * (int64 * string * char)
 
 // If a tuple is a pair, then you can use the functions "fst" and "snd" to retrieve 
 // the first and second elements, but ONLY FOR PAIRS.
@@ -29,6 +30,8 @@ let addOneToTuple tup =
     let (x,y,z) = tup
     (x+1, y+1, z+1)
 // What type is "tup"?
+ 
+ // ???
 
 let answer1 = addOneToTuple (5, 6, 2) // WARNING: do not equate this with "normal function calls" 
                                       // in Java, C++, etc. The parentheses here create a single
